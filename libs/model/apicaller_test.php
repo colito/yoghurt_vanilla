@@ -136,10 +136,8 @@ class ApiCaller
 
         $parts=parse_url($this->_api_url);
 
-        $parts['query'] = $post_string;
-
         $headers = array(
-            "GET ".$parts['path'] . '?' . $parts['query']." HTTP/1.1",
+            "POST HTTP/1.1",
             "Host: ".$parts['host'],
             "Content-Type: application/x-www-form-urlencoded"
         );
